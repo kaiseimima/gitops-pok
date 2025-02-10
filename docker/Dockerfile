@@ -1,3 +1,4 @@
-FROM nginx:alpine
+FROM nginx:stable-alpine
 COPY default.conf /etc/nginx/conf.d/default.conf
-EXPOSE 80
+COPY static/ /usr/share/nginx/html/
+CMD ["nginx", "-g", "daemon offl;"]
